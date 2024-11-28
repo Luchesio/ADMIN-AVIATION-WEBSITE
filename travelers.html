@@ -4,26 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traveler Information</title>
-    <link rel="stylesheet" href="traveler.css" />
+    <link rel="stylesheet" href="travelers.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="language.js" defer></script>
   </head>
   <body>
-    <h2>Traveler Information</h2>
+    <div id="loading-screen">
+      <div class="spinner"></div>
+    </div>
+    <div id="main-content" style="display: none">
+      <div class="container">
+        <nav class="sidebar">
+          <ul>
+            <!-- <li>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      </li> -->
+            <li>
+              <a href="flights.html"
+                ><i class="fas fa-plane"></i>
+                <p id="navFlights">Flights</p></a
+              >
+              <ul>
+                <li><a href="#">Upcoming Flights</a></li>
+                <li><a href="#">Cancelled Flights</a></li>
+                <li><a href="#">Rescheduled Flights</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="tickets.html"
+                ><i class="fas fa-ticket-alt"></i>
+                <p id="navTickets">Tickets</p></a
+              >
+            </li>
+            <li>
+              <a href="travelers.html"
+                ><i class="fas fa-users"></i>
+                <p id="navTravelers">Travelers</p></a
+              >
+            </li>
+            <li>
+              <a href="notifications.html"
+                ><i class="fas fa-bell"></i>
+                <p id="navNotifications">Notifications</p></a
+              >
+            </li>
+            <li>
+              <a href="reports.html"
+                ><i class="fas fa-chart-line"></i>
+                <p id="navReports">Reports</p></a
+              >
+            </li>
+            <li>
+              <a href="help.html"
+                ><i class="fas fa-question-circle"></i>
+                <p id="navHelp">Help Center</p></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i class="fas fa-cog"></i>
+                <p id="navSettings">Settings</p></a
+              >
+            </li>
+            <li>
+              <a href="home.html"
+                ><i class="fas fa-user"></i>
+                <p id="dashboard">Dashboard</p></a
+              >
+            </li>
+          </ul>
+        </nav>
 
-    <table id="traveler-table">
-      <thead>
-        <tr>
-          <th>Traveler ID</th>
-          <th>Name</th>
-          <th>Phone Number</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Data rows will be inserted dynamically here -->
-      </tbody>
-    </table>
+        <!-- <h2>Traveler Information</h2> -->
+        <div class="trcontainer">
+          <div class="info-box">
+            <h3 class="dashboard">Customers</h3>
+            <div class="good">
+              <p id="goodday" id="good"></p>
 
+              <i class="fas fa-user" style="margin-left: 20px"></i>
+            </div>
+          </div>
+          <table id="traveler-table">
+            <thead>
+              <tr>
+                <th>Traveler ID</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data rows will be inserted dynamically here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     <script>
       // scripts.js
 
@@ -60,5 +140,6 @@
         tableBody.appendChild(row);
       });
     </script>
+    <script src="travelers.js"></script>
   </body>
 </html>

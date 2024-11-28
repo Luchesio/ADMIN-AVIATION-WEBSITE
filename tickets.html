@@ -4,38 +4,113 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ticket Information</title>
-    <link rel="stylesheet" href="tickets.css" />
+    <link rel="stylesheet" href="ticket.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="language.js" defer></script>
   </head>
   <body>
-    <div class="page-container">
-      <h2 class="page-title">Ticket Information</h2>
-
-      <!-- Table Container -->
-      <div class="table-container">
-        <table class="ticket-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Flight Code</th>
-              <th>Traveler Name</th>
-            </tr>
-          </thead>
-          <tbody id="ticket-table-body">
-            <!-- Dynamic rows will be inserted here -->
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Button to Generate New Ticket -->
-      <button class="generate-ticket-btn" onclick="generateNewTicket()">
-        Generate Ticket
-      </button>
+    <div id="loading-screen">
+      <div class="spinner"></div>
     </div>
+    <div id="main-content" style="display: none">
+      <div class="container">
+        <nav class="sidebar">
+          <ul>
+            <li>
+              <a href="flights.html"
+                ><i class="fas fa-plane"></i>
+                <p id="navFlights">Flights</p></a
+              >
+              <ul>
+                <li><a href="#">Upcoming Flights</a></li>
+                <li><a href="#">Cancelled Flights</a></li>
+                <li><a href="#">Rescheduled Flights</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="tickets.html"
+                ><i class="fas fa-ticket-alt"></i>
+                <p id="navTickets">Tickets</p></a
+              >
+            </li>
+            <li>
+              <a href="travelers.html"
+                ><i class="fas fa-users"></i>
+                <p id="navTravelers">Travelers</p></a
+              >
+            </li>
+            <li>
+              <a href="notifications.html"
+                ><i class="fas fa-bell"></i>
+                <p id="navNotifications">Notifications</p></a
+              >
+            </li>
+            <li>
+              <a href="reports.html"
+                ><i class="fas fa-chart-line"></i>
+                <p id="navReports">Reports</p></a
+              >
+            </li>
+            <li>
+              <a href="help.html"
+                ><i class="fas fa-question-circle"></i>
+                <p id="navHelp">Help Center</p></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i class="fas fa-cog"></i>
+                <p id="navSettings">Settings</p></a
+              >
+            </li>
+            <li>
+              <a href="home.html"
+                ><i class="fas fa-user"></i>
+                <p id="dashboard">Dashboard</p></a
+              >
+            </li>
+          </ul>
+        </nav>
 
-    <footer>
-      <p>&copy; 2024 Aviation Project</p>
-    </footer>
+        <div class="tcontainer">
+          <div class="info-box">
+            <h3 class="dashboard">Tickets</h3>
+            <div class="good">
+              <p id="goodday" id="good"></p>
+
+              <i class="fas fa-user" style="margin-left: 20px"></i>
+            </div>
+          </div>
+          <div class="page-container">
+            <h2 class="page-title">Ticket Information</h2>
+
+            <!-- Table Container -->
+            <div class="table-container">
+              <table class="ticket-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Flight Code</th>
+                    <th>Traveler Name</th>
+                  </tr>
+                </thead>
+                <tbody id="ticket-table-body">
+                  <!-- Dynamic rows will be inserted here -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Button to Generate New Ticket -->
+            <button class="generate-ticket-btn" onclick="generateNewTicket()">
+              Generate Ticket
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       // Function to generate random Flight Code (e.g., FL56780)
@@ -87,5 +162,6 @@
       // Call the displayTickets function to load the data from localStorage when the page loads
       window.onload = displayTickets;
     </script>
+    <script src="tickets.js"></script>
   </body>
 </html>

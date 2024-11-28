@@ -1,0 +1,58 @@
+/* settings.css */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #e8618c;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .settings-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    color: var(--accent-color);
+  }
+  
+  .settings-section {
+    margin-bottom: 30px;
+  }
+  
+  .toggle-group, .language-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  label {
+    font-size: 1rem;
+  }
+  
+  input[type="checkbox"], select {
+    padding: 5px;
+    font-size: 1rem;
+  }
+  
+  select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #languageSelect
+  {
+    width: 200px;
+    
+  }

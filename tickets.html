@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Information</title>
+    <link rel="stylesheet" href="tickets.css" />
+    <script src="language.js" defer></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <h2 class="page-title">Ticket Information</h2>
+
+      <!-- Table Container -->
+      <div class="table-container">
+        <table class="ticket-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Flight Code</th>
+              <th>Traveler Name</th>
+            </tr>
+          </thead>
+          <tbody id="ticket-table-body">
+            <!-- Dynamic rows will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Button to Generate New Ticket -->
+      <button class="generate-ticket-btn" onclick="generateNewTicket()">
+        Generate Ticket
+      </button>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Aviation Project</p>
+    </footer>
+
+    <script>
+      // Function to generate random Flight Code (e.g., FL56780)
+      function generateFlightCode() {
+        return (
+          "FL" +
+          Math.floor(Math.random() * 10000) +
+          Math.floor(Math.random() * 10000)
+        );
+      }
+
+      // Function to fetch travelers from local storage and display them in the table
+      function displayTickets() {
+        const tableBody = document.getElementById("ticket-table-body");
+        const travelers = JSON.parse(localStorage.getItem("travelers")) || [];
+
+        tableBody.innerHTML = ""; // Clear previous rows
+
+        // Loop through travelers and add rows to the table
+        travelers.forEach((traveler, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+    <td>${traveler.id}</td>
+    <td>${generateFlightCode()}</td>
+    <td>${traveler.name}</td>
+  `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Function to generate a new ticket entry (this is just for demonstration)
+      function generateNewTicket() {
+        const travelers = JSON.parse(localStorage.getItem("travelers")) || [];
+
+        // Create a new traveler object (could be taken from a form or input fields)
+        const newTraveler = {
+          id: travelers.length + 1, // Auto-increment the ID
+          name: prompt("Enter Traveler's Name"), // Simple prompt for name
+        };
+
+        // Add new traveler to the localStorage
+        travelers.push(newTraveler);
+        localStorage.setItem("travelers", JSON.stringify(travelers));
+
+        // Refresh the ticket display
+        displayTickets();
+      }
+
+      // Call the displayTickets function to load the data from localStorage when the page loads
+      window.onload = displayTickets;
+    </script>
+  </body>
+</html>

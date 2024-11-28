@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aerolert - Dashboard</title>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="language.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar">
+        <ul>
+          <!-- <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li> -->
+          <li>
+            <a id="navFlights" href="flights.html"
+              ><i class="fas fa-plane"></i> Flights</a
+            >
+            <ul>
+              <li><a href="#">Upcoming Flights</a></li>
+              <li><a href="#">Cancelled Flights</a></li>
+              <li><a href="#">Rescheduled Flights</a></li>
+            </ul>
+          </li>
+          <li>
+            <a id="navTickets" href="tickets.html"
+              ><i class="fas fa-ticket-alt"></i> Tickets</a
+            >
+          </li>
+          <li>
+            <a id="navTravelers" href="travelers.html"
+              ><i class="fas fa-users"></i> Travelers</a
+            >
+          </li>
+          <li>
+            <a id="navNotifications" href="notifications.html"
+              ><i class="fas fa-bell"></i> Notifications</a
+            >
+          </li>
+          <li>
+            <a id="navReports" href="reports.html"
+              ><i class="fas fa-chart-line"></i> Reports</a
+            >
+          </li>
+          <li>
+            <a id="navHelp" href="help.html"
+              ><i class="fas fa-question-circle"></i> Help Center</a
+            >
+          </li>
+          <li>
+            <a id="navSettings" href="settings.html"
+              ><i class="fas fa-cog"></i> Settings</a
+            >
+          </li>
+          <li>
+            <a id="navUser" href="user.html"
+              ><i class="fas fa-user"></i> User</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="content">
+        <!-- <div class="top">
+          <h3 class="dashboard">Dashboard</h3>
+          <div>
+            <p id="goodday"></p>
+            <img src="" alt="" />
+          </div>
+        </div> -->
+
+        <div class="info-box">
+          <h3 class="dashboard" id="dashboard">Dashboard</h3>
+          <div class="good">
+            <p id="goodday" id="good"></p>
+
+            <i class="fas fa-user" style="margin-left: 20px"></i>
+          </div>
+
+          <!-- <h3>System Update</h3>
+          <p>
+            Aerolert's system has been upgraded with new features to make
+            aviation management more efficient.
+          </p>
+          <a href="help.html" class="btn-small">Learn More</a> -->
+        </div>
+        <header>
+          <h1 id="homeTitle">Welcome to Aerolert's Management System</h1>
+          <p id="homeDescription">
+            Aerolert helps aviation professionals streamline their operations,
+            manage flight schedules, and provide exceptional service to
+            travelers.
+          </p>
+        </header>
+
+        <section class="stats">
+          <div class="stat">
+            <i class="fas fa-plane-departure"></i>
+            <h2 id="idManaged">Flights Managed</h2>
+            <p id="counter">0+</p>
+          </div>
+          <div class="stat">
+            <i class="fas fa-users"></i>
+            <h2 id="idAssisted">Travelers Assisted</h2>
+            <p id="counter2">0+</p>
+          </div>
+          <div class="stat">
+            <i class="fas fa-envelope"></i>
+            <h2 id="idSent">Notifications Sent</h2>
+            <p id="counter3">0+</p>
+          </div>
+        </section>
+
+        <section class="features">
+          <h2 id="idFeatures">Key Features</h2>
+          <ul>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <p id="idReal">Real-time Flight Management</p>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <p id="idAutomated">Automated Notifications</p>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <p id="idUser">User-Friendly Reports</p>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <p id="idIntuitive">Intuitive Ticket Booking</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="cta">
+          <h2>Get Started</h2>
+          <p>
+            Explore the features of Aerolert today and enhance your aviation
+            management experience.
+          </p>
+          <a href="help.html" class="btn">Learn More</a>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-section about">
+              <h3>Aerolert</h3>
+              <p>
+                Aerolert is your trusted aviation management platform, ensuring
+                seamless flight operations and communication for travelers and
+                staff.
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="travelers.html">Travelers</a></li>
+                <li><a href="help.html">Help Center</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section contact">
+              <h4>Contact Us</h4>
+              <p><i class="fas fa-phone"></i> +2349056035245</p>
+              <p><i class="fas fa-envelope"></i> support@aerolert.com</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Aviation Lane, Ikeja ,
+                Lagos
+              </p>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-section social">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; 2024 Aerolert. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="home.js"></script>
+  </body>
+</html>

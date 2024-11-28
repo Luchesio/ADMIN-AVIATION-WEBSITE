@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="language.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <!-- Same navigation as on the home page -->
+    </nav>
+
+    <div class="content">
+      <h1>Generate Reports</h1>
+      <button onclick="generateReports()">View Reports</button>
+      <div id="reports"></div>
+    </div>
+
+    <script>
+      function generateReports() {
+        const reports = [
+          {
+            id: 1,
+            title: "Daily Flights",
+            details: "Report for daily flights.",
+          },
+          { id: 2, title: "Ticket Sales", details: "Report for ticket sales." },
+        ];
+
+        const reportsDiv = document.getElementById("reports");
+        reportsDiv.innerHTML = `
+        <ul>
+          ${reports
+            .map(
+              (report) => `
+            <li>
+              <h3>${report.title}</h3>
+              <p>${report.details}</p>
+            </li>
+          `
+            )
+            .join("")}
+        </ul>
+      `;
+      }
+    </script>
+  </body>
+</html>

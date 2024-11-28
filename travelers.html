@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traveler Information</title>
+    <link rel="stylesheet" href="traveler.css" />
+    <script src="language.js" defer></script>
+  </head>
+  <body>
+    <h2>Traveler Information</h2>
+
+    <table id="traveler-table">
+      <thead>
+        <tr>
+          <th>Traveler ID</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data rows will be inserted dynamically here -->
+      </tbody>
+    </table>
+
+    <script>
+      // scripts.js
+
+      // Fetch stored traveler data from localStorage
+      let travelers = JSON.parse(localStorage.getItem("travelers")) || [];
+
+      // Reference to the table body
+      const tableBody = document.querySelector("#traveler-table tbody");
+
+      // Populate the table with traveler data
+      travelers.forEach((traveler) => {
+        const row = document.createElement("tr");
+
+        // Create table cells for each piece of traveler information
+        const idCell = document.createElement("td");
+        idCell.textContent = traveler.id;
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = traveler.name;
+
+        const phoneCell = document.createElement("td");
+        phoneCell.textContent = traveler.phone;
+
+        const emailCell = document.createElement("td");
+        emailCell.textContent = traveler.email;
+
+        // Append the cells to the row
+        row.appendChild(idCell);
+        row.appendChild(nameCell);
+        row.appendChild(phoneCell);
+        row.appendChild(emailCell);
+
+        // Append the row to the table body
+        tableBody.appendChild(row);
+      });
+    </script>
+  </body>
+</html>

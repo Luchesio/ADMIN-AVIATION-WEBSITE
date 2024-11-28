@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Page</title>
+    <link rel="stylesheet" href="notification.css" />
+    <script src="language.js" defer></script>
+  </head>
+  <body>
+    <div class="notification-container">
+      <h2>Send Notifications</h2>
+
+      <!-- Form for selecting ID -->
+      <form id="notification-form">
+        <label for="id-select">Select Traveler ID:</label>
+        <select id="id-select" required>
+          <!-- Options will be dynamically populated -->
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          placeholder="Type your message here..."
+          required
+        ></textarea>
+
+        <div class="actions">
+          <button type="button" id="send-email">Send Email</button>
+          <button type="button" id="send-sms">Send SMS</button>
+        </div>
+      </form>
+
+      <div id="notification-response"></div>
+    </div>
+
+    <script src="notification.js"></script>
+  </body>
+</html>

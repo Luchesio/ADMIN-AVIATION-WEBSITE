@@ -48,29 +48,34 @@
     <script src="language.js" defer></script>
   </head>
   <body>
-    <div class="settings-container">
-      <h1>Settings</h1>
+    <div id="loading-screen">
+      <div class="spinner"></div>
+    </div>
+    <div id="main-content" style="display: none">
+      <div class="settings-container">
+        <h1>Settings</h1>
 
-      <section class="settings-section">
-        <h2>Appearance</h2>
-        <div class="toggle-group">
-          <label for="themeToggle">Dark Mode:</label>
-          <input type="checkbox" id="themeToggle" />
-        </div>
-      </section>
+        <section class="settings-section">
+          <h2>Appearance</h2>
+          <div class="toggle-group">
+            <label for="themeToggle">Dark Mode:</label>
+            <input type="checkbox" id="themeToggle" />
+          </div>
+        </section>
 
-      <section class="settings-section">
-        <h2>Language</h2>
-        <div class="language-group">
-          <label for="languageSelect">Select Language:</label>
-          <select id="languageSelect">
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
-            <option value="de">German</option>
-          </select>
-        </div>
-      </section>
+        <section class="settings-section">
+          <h2>Language</h2>
+          <div class="language-group">
+            <label for="languageSelect">Select Language:</label>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+            </select>
+          </div>
+        </section>
+      </div>
     </div>
 
     <script src="settings.js"></script>
